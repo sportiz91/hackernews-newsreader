@@ -1,9 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, memo } from "react";
 import { getStory } from "../Services/hnApi";
 import { Mapper } from "../Mappers/Mapper";
 
-export const Story = ({ storyId }) => {
+export const Story = memo(({ storyId }) => {
   const [story, setStory] = useState({});
+
+  //Uncomment this console log and remove memo, to see the re-render of components. Is unoptimal!!!!!!!!! (everytime count state changes, story gets
+  //loaded all again).
+  //console.log(`component rendered id: ${storyId}`);
 
   useEffect(() => {
     getStory(storyId).then((data) => {
@@ -36,4 +40,4 @@ export const Story = ({ storyId }) => {
       ) : null}
     </>
   );
-};
+});
