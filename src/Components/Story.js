@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getStory } from "../Services/hnApi";
+import { Mapper } from "../Mappers/Mapper";
 
 export const Story = ({ storyId }) => {
   const [story, setStory] = useState({});
@@ -28,7 +29,7 @@ export const Story = ({ storyId }) => {
 
             <span>
               <span> Posted: </span>
-              {story.time}
+              {Mapper(story.time)}
             </span>
           </div>
         </section>
