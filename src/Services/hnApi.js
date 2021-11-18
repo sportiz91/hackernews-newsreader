@@ -11,10 +11,9 @@ console.log(idsUrl);
 //GET Requests:
 export const getStoryIds = async () => {
   const result = await axios.get(idsUrl);
-  console.log(result);
 
   const data = result.data;
-
+  console.log(data);
   return data;
 };
 

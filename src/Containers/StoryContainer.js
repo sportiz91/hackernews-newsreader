@@ -13,7 +13,7 @@ export const StoryContainer = () => {
   const { count } = UseInfiniteScroll();
 
   useEffect(() => {
-    getStoryIds().then((data) => data && setStoryIds(data));
+    getStoryIds().then((data) => setStoryIds(data));
   }, []);
 
   return (
