@@ -1,6 +1,7 @@
 import { useEffect, useState, memo } from "react";
 import { getStory } from "../Services/hnApi";
 import { Mapper } from "../Mappers/Mapper";
+import { StorySection, SpanContainer } from "../Styles/StoryIndividual.style";
 
 export const Story = memo(({ storyId }) => {
   const [story, setStory] = useState({});
@@ -18,7 +19,7 @@ export const Story = memo(({ storyId }) => {
   return (
     <>
       {story && story.url ? (
-        <section>
+        <StorySection bgLink={"#f8dc3d"} colorLink={"#202020"}>
           <h1>
             <a href={story.url} target="_blank" rel="noopener noreferrer">
               {story.title}
@@ -26,17 +27,17 @@ export const Story = memo(({ storyId }) => {
           </h1>
 
           <div>
-            <span>
+            <SpanContainer>
               <span>By: </span>
               {story.by}
-            </span>
+            </SpanContainer>
 
-            <span>
+            <SpanContainer>
               <span> Posted: </span>
               {Mapper(story.time)}
-            </span>
+            </SpanContainer>
           </div>
-        </section>
+        </StorySection>
       ) : null}
     </>
   );
