@@ -13,6 +13,30 @@
     "styled-components": "^5.3.3",
     "web-vitals": "^1.0.1"
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/index.js",
+      "!src/reportWebVitals.js",
+      "!src/setupTests/*.js",
+      "!src/Hooks/*.js",
+      "!src/Selectors/*.js",
+      "!src/Mappers/*.js",
+      "!src/Utils/*.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 95,
+        "functions": 95,
+        "lines": 95,
+        "statements": 95
+      }
+    },
+    "coverageReporters": [
+      "html",
+      "text"
+    ]
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

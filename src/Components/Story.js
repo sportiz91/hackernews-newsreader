@@ -26,8 +26,8 @@ export const Story = memo(({ storyId }) => {
             </a>
           </h1>
 
-          <div data-testid="tagContainer">
-            <SpanContainer>
+          <div>
+            <SpanContainer data-testid="tagContainer">
               <span>By: </span>
               {story.by}
             </SpanContainer>

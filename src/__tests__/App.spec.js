@@ -33,12 +33,12 @@ test("On page load, return the StoryContainer with a mock story in it", async ()
   const { getByRole, getByTestId } = render(<App />);
 
   await waitFor(() => {
-    expect(getByRole("heading", { name: /hacker news stories/i }));
+    expect(getByRole("heading", { name: /hacker news stories/i })).toBeTruthy();
     expect(
       getByRole("heading", {
         name: /learn how to trade crypto, motherfucker!/i,
       })
-    );
-    expect(getByTestId("tagContainer"));
+    ).toBeTruthy();
+    expect(getByTestId("tagContainer")).toHaveTextContent("Lasantoneta");
   });
 });
